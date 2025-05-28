@@ -1,0 +1,17 @@
+= Homebrew Tap for Provengo
+
+To install, type:
+
+[code, bash]
+----
+brew tap Provengo/homebrew-provengo
+brew install provengo
+----
+
+Then, to check that installation was successful, type:
+
+[code, bash]
+----
+provengo --help
+----
+
