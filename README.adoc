@@ -14,4 +14,3 @@ Then, to check that installation was successful, type:
 ----
 provengo --help
 ----
-
