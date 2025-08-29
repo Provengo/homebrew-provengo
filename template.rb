@@ -1,7 +1,7 @@
 class Provengo < Formula
   desc "Scenario-based modeling and testing tool"
   homepage "https://www.provengo.tech/"
-  url "https://downloads.provengo.tech/releases/@FILENAME@"
+  url "https://downloads.provengo.tech/binaries/jar/@FILENAME@"
   sha256 "@SHA@"
 
   depends_on "graphviz"
