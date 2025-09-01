@@ -1,8 +1,8 @@
 class Provengo < Formula
   desc "Scenario-based modeling and testing tool"
   homepage "https://www.provengo.tech/"
-  url "https://downloads.provengo.tech/binaries/jar/Provengo-2025-08-29.uber.jar"
-  sha256 "b7d2189ae18528968d7adef029a84748468b68530c50cbf7a11ace54ef611487"
+  url "https://downloads.provengo.tech/binaries/jar/Provengo-2025-09-01.uber.jar"
+  sha256 "a47515071dc2afbdf8c1cbd07ace06f684d141d1e88e91376faba6d95adb0ec4"
 
   depends_on "graphviz"
 
