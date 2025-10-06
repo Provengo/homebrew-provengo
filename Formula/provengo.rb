@@ -1,8 +1,8 @@
 class Provengo < Formula
   desc "Scenario-based modeling and testing tool"
   homepage "https://www.provengo.tech/"
-  url "https://downloads.provengo.tech/binaries/jar/Provengo-2025-09-30.uber.jar"
-  sha256 "fb933e76f0d4efaa0f7428b5ba20c9f2444ed7c532194356bb719f20c9156cd0"
+  url "https://downloads.provengo.tech/binaries/jar/Provengo-2025-10-06.uber.jar"
+  sha256 "d1d01467aed2ffb3a1c3523351b6c3cafaedf4e8d8d629374d2b8e0f30a44f95"
 
   depends_on "graphviz"
 
@@ -20,14 +20,14 @@ class Provengo < Formula
   def install
     check_java_version
 
-    libexec.install "Provengo-2025-09-30.uber.jar"
+    libexec.install "Provengo-2025-10-06.uber.jar"
     (bin/"provengo").write <<~EOS
       #!/bin/bash
       JAVA_VERSION=$(java --version | head -n1 | awk '{ print $2 }' | cut -d. -f1)
       if (( $JAVA_VERSION > 23 )); then
           SWITCH=--enable-native-access=ALL-UNNAMED
       fi
-      exec java $SWITCH -jar "#{libexec}/Provengo-2025-09-30.uber.jar" "$@"
+      exec java $SWITCH -jar "#{libexec}/Provengo-2025-10-06.uber.jar" "$@"
     EOS
   end
 
