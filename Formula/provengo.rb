@@ -23,15 +23,7 @@ class Provengo < Formula
     libexec.install "Provengo-2026-01-10.uber.jar"
     (bin/"provengo").write <<~EOS
       #!/bin/bash
-<<<<<<< HEAD
       exec java --enable-native-access=ALL-UNNAMED -jar "#{libexec}/Provengo-2025-09-03.uber.jar" "$@"
-=======
-      JAVA_VERSION=$(java --version | head -n1 | awk '{ print $2 }' | cut -d. -f1)
-      if (( $JAVA_VERSION > 23 )); then
-          SWITCH=--enable-native-access=ALL-UNNAMED
-      fi
-      exec java $SWITCH -jar "#{libexec}/Provengo-2026-01-10.uber.jar" "$@"
->>>>>>> 25a53dc96bd47f765ac0d9d8d781540c1dcfbae7
     EOS
   end
 
