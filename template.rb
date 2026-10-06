@@ -10,8 +10,8 @@ class Provengo < Formula
     java_version = `java -version 2>&1 | awk -F '"' '/version/ {print $2}'`.chomp
     java_major = java_version.split(".").then { |parts| ((parts[0] == "1") ? parts[1].to_i : parts[0].to_i) }
 
-    if java_major < 11
-      odie "Error: Java 11 or higher is required. Detected version: #{java_version}"
+    if java_major < 25
+      odie "Error: Java 25 or higher is required. Detected version: #{java_version}. You can install one using 'brew install openjdk'"
     else
       ohai "Java version #{java_version} detected — OK"
     end
@@ -24,10 +24,7 @@ class Provengo < Formula
     (bin/"provengo").write <<~EOS
       #!/bin/bash
       JAVA_VERSION=$(java --version | head -n1 | awk '{ print $2 }' | cut -d. -f1)
-      if (( $JAVA_VERSION > 23 )); then
-          SWITCH=--enable-native-access=ALL-UNNAMED
-      fi
-      exec java $SWITCH -jar "#{libexec}/@FILENAME@" "$@"
+      exec java --enable-native-access=ALL-UNNAMED -jar "#{libexec}/@FILENAME@" "$@"
     EOS
   end
 
